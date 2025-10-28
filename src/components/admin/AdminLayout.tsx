@@ -18,6 +18,7 @@ interface AdminLayoutProps {
 
 export default function AdminLayout({ onLogout, currentUser }: AdminLayoutProps) {
   const [currentPage, setCurrentPage] = useState('dashboard');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -48,7 +49,13 @@ export default function AdminLayout({ onLogout, currentUser }: AdminLayoutProps)
 
   return (
     <div className="flex h-screen bg-gray-50">
-      <Sidebar currentPage={currentPage} onPageChange={setCurrentPage} onLogout={onLogout} />
+      <Sidebar
+        currentPage={currentPage}
+        onPageChange={setCurrentPage}
+        onLogout={onLogout}
+        isOpen={isSidebarOpen}
+        onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+      />
       <main className="flex-1 overflow-auto">
         {renderPage()}
       </main>
