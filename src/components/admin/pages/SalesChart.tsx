@@ -11,6 +11,20 @@ export default function SalesChart() {
   const chartInstance = useRef<any>(null);
 
   useEffect(() => {
+    const randomAmount = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+    const salesData = [
+      randomAmount(800000, 1200000),
+      randomAmount(850000, 1250000),
+      randomAmount(700000, 1100000),
+      randomAmount(950000, 1350000),
+      randomAmount(1200000, 1600000),
+      randomAmount(900000, 1300000),
+      randomAmount(850000, 1250000),
+    ];
+
+    const billingData = salesData.map(amount => Math.floor(amount * 1.1));
+
     const loadChart = () => {
       if (!chartRef.current || !window.Chart) return;
 
@@ -26,7 +40,7 @@ export default function SalesChart() {
         datasets: [
           {
             label: '売上金額(税別)',
-            data: [1000000, 950000, 750000, 1100000, 1500000, 1100000, 1050000],
+            data: salesData,
             borderColor: '#4285F4',
             backgroundColor: 'rgba(66, 133, 244, 0.1)',
             borderWidth: 2,
@@ -36,7 +50,7 @@ export default function SalesChart() {
           },
           {
             label: '請求金額(税込)',
-            data: [1100000, 1000000, 800000, 1250000, 1550000, 1150000, 1100000],
+            data: billingData,
             borderColor: '#FF6B35',
             backgroundColor: 'rgba(255, 107, 53, 0.1)',
             borderWidth: 2,

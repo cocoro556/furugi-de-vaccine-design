@@ -6,36 +6,39 @@ interface DashboardProps {
 }
 
 export default function Dashboard({ currentUser }: DashboardProps = {}) {
+  const randomAmount = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomPercent = () => (Math.random() * 30 - 10).toFixed(1);
+
   const stats = [
     {
       label: '前日の受注金額',
-      value: '¥245,000',
-      change: '+12.5%',
-      trend: 'up',
+      value: `¥${randomAmount(180000, 350000).toLocaleString()}`,
+      change: `${randomPercent()}%`,
+      trend: Math.random() > 0.5 ? 'up' : 'down',
       icon: TrendingUp,
       color: 'blue',
     },
     {
       label: '前日の受注個数',
-      value: '48件',
-      change: '+8.2%',
-      trend: 'up',
+      value: `${randomAmount(35, 75)}件`,
+      change: `${randomPercent()}%`,
+      trend: Math.random() > 0.5 ? 'up' : 'down',
       icon: ShoppingCart,
       color: 'green',
     },
     {
       label: '在庫商品数',
-      value: '156個',
-      change: '-3.1%',
-      trend: 'down',
+      value: `${randomAmount(100, 250)}個`,
+      change: `${randomPercent()}%`,
+      trend: Math.random() > 0.5 ? 'up' : 'down',
       icon: Package,
       color: 'orange',
     },
     {
       label: '新規顧客',
-      value: '23人',
-      change: '+15.8%',
-      trend: 'up',
+      value: `${randomAmount(15, 45)}人`,
+      change: `${randomPercent()}%`,
+      trend: Math.random() > 0.5 ? 'up' : 'down',
       icon: Users,
       color: 'purple',
     },
@@ -114,7 +117,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
             <h1 className="text-2xl font-bold text-gray-900 mb-2">ホーム</h1>
             <div className="flex items-center text-sm text-gray-600">
               <Calendar className="w-4 h-4 mr-2" />
-              <span>2023年11月1日 (水) 更新</span>
+              <span>2025年10月28日 (火) 更新</span>
             </div>
           </div>
           {currentUser && (
@@ -217,11 +220,11 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200 hover:bg-gray-50">
-                        <td className="px-4 py-3 text-left font-medium text-gray-900">260</td>
-                        <td className="px-4 py-3 text-right text-gray-900">1,026,324</td>
-                        <td className="px-4 py-3 text-right text-gray-900">3,947</td>
-                        <td className="px-4 py-3 text-right text-gray-900">1,144,000</td>
-                        <td className="px-4 py-3 text-right text-gray-900">4,400</td>
+                        <td className="px-4 py-3 text-left font-medium text-gray-900">{randomAmount(180, 320)}</td>
+                        <td className="px-4 py-3 text-right text-gray-900">{randomAmount(850000, 1200000).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-right text-gray-900">{randomAmount(3500, 4500).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-right text-gray-900">{randomAmount(950000, 1300000).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-right text-gray-900">{randomAmount(4000, 5000).toLocaleString()}</td>
                         <td className="px-4 py-3 text-right text-gray-900"></td>
                       </tr>
                     </tbody>
@@ -247,11 +250,11 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200 hover:bg-gray-50">
-                        <td className="px-4 py-3 text-left font-medium text-gray-900">6,595</td>
-                        <td className="px-4 py-3 text-right text-gray-900">25,811,580</td>
-                        <td className="px-4 py-3 text-right text-gray-900">3,913</td>
-                        <td className="px-4 py-3 text-right text-gray-900">28,709,000</td>
-                        <td className="px-4 py-3 text-right text-gray-900">4,353</td>
+                        <td className="px-4 py-3 text-left font-medium text-gray-900">{randomAmount(5500, 7500).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-right text-gray-900">{randomAmount(22000000, 29000000).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-right text-gray-900">{randomAmount(3500, 4500).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-right text-gray-900">{randomAmount(25000000, 32000000).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-right text-gray-900">{randomAmount(4000, 5000).toLocaleString()}</td>
                         <td className="px-4 py-3 text-right text-gray-900"></td>
                       </tr>
                     </tbody>
@@ -289,9 +292,9 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {[
-                    { id: 'ORD-20231028-015', date: '2023-10-28', customer: '田中 太郎', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: 45800 },
-                    { id: 'ORD-20231028-014', date: '2023-10-28', customer: '佐藤 花子', product: 'スタンダード商品A', payment: '銀行振込', amount: 12500 },
-                    { id: 'ORD-20231028-013', date: '2023-10-28', customer: '鈴木 一郎', product: 'デラックス商品パック', payment: 'クレジットカード', amount: 38900 },
+                    { id: 'ORD-20251028-015', date: '2025-10-28', customer: '田中 太郎', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: randomAmount(35000, 55000) },
+                    { id: 'ORD-20251028-014', date: '2025-10-28', customer: '佐藤 花子', product: 'スタンダード商品A', payment: '銀行振込', amount: randomAmount(10000, 20000) },
+                    { id: 'ORD-20251028-013', date: '2025-10-28', customer: '鈴木 一郎', product: 'デラックス商品パック', payment: 'クレジットカード', amount: randomAmount(30000, 45000) },
                   ].map((order) => (
                     <tr key={order.id} className="hover:bg-gray-50">
                       <td className="px-4 py-3 text-sm text-blue-600 hover:underline cursor-pointer">{order.id}</td>
@@ -325,19 +328,19 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
                   <tbody>
                     <tr className="border-b border-[#CCC]">
                       <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">現在の会員数</td>
-                      <td className="bg-white px-4 py-3 text-right">252,777名</td>
+                      <td className="bg-white px-4 py-3 text-right">{randomAmount(180000, 280000).toLocaleString()}名</td>
                     </tr>
                     <tr className="border-b border-[#CCC]">
                       <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">会員の保持ポイント合計</td>
-                      <td className="bg-white px-4 py-3 text-right">0pt</td>
+                      <td className="bg-white px-4 py-3 text-right">{randomAmount(0, 50000).toLocaleString()}pt</td>
                     </tr>
                     <tr className="border-b border-[#CCC]">
                       <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">レビュー書き込み　未処理数</td>
-                      <td className="bg-white px-4 py-3 text-right">19件</td>
+                      <td className="bg-white px-4 py-3 text-right">{randomAmount(10, 35)}件</td>
                     </tr>
                     <tr className="border-b border-[#CCC]">
                       <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">レビュー書き込み　非表示数</td>
-                      <td className="bg-white px-4 py-3 text-right">95件</td>
+                      <td className="bg-white px-4 py-3 text-right">{randomAmount(70, 120)}件</td>
                     </tr>
                     <tr>
                       <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">品切れ商品</td>
@@ -372,7 +375,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
                   <tbody>
                     <tr>
                       <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">大量メール配信オプション 送信総数</td>
-                      <td className="bg-white px-4 py-3 text-right">20,557通</td>
+                      <td className="bg-white px-4 py-3 text-right">{randomAmount(15000, 25000).toLocaleString()}通</td>
                     </tr>
                   </tbody>
                 </table>
@@ -406,21 +409,21 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {[
-                    { id: 'ORD-20231028-015', date: '2023-10-28', customer: '田中 太郎', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: 45800 },
-                    { id: 'ORD-20231028-014', date: '2023-10-28', customer: '佐藤 花子', product: 'スタンダード商品A', payment: '銀行振込', amount: 12500 },
-                    { id: 'ORD-20231028-013', date: '2023-10-28', customer: '鈴木 一郎', product: 'デラックス商品パック', payment: 'クレジットカード', amount: 38900 },
-                    { id: 'ORD-20231027-012', date: '2023-10-27', customer: '高橋 美咲', product: 'ベーシック商品B', payment: 'コンビニ決済', amount: 8900 },
-                    { id: 'ORD-20231027-011', date: '2023-10-27', customer: '渡辺 健太', product: 'エコノミー商品C', payment: 'クレジットカード', amount: 15600 },
-                    { id: 'ORD-20231027-010', date: '2023-10-27', customer: '伊藤 由美', product: 'プレミアム商品セット', payment: '銀行振込', amount: 45800 },
-                    { id: 'ORD-20231026-009', date: '2023-10-26', customer: '山本 大輔', product: 'スタンダード商品A', payment: 'クレジットカード', amount: 12500 },
-                    { id: 'ORD-20231026-008', date: '2023-10-26', customer: '中村 愛子', product: 'ラグジュアリー商品', payment: 'クレジットカード', amount: 52000 },
-                    { id: 'ORD-20231026-007', date: '2023-10-26', customer: '小林 誠', product: 'デラックス商品パック', payment: '銀行振込', amount: 38900 },
-                    { id: 'ORD-20231025-006', date: '2023-10-25', customer: '加藤 里奈', product: 'ベーシック商品B', payment: 'コンビニ決済', amount: 8900 },
-                    { id: 'ORD-20231025-005', date: '2023-10-25', customer: '吉田 翔太', product: 'スタンダード商品A', payment: 'クレジットカード', amount: 12500 },
-                    { id: 'ORD-20231025-004', date: '2023-10-25', customer: '山田 さくら', product: 'エコノミー商品C', payment: '銀行振込', amount: 15600 },
-                    { id: 'ORD-20231024-003', date: '2023-10-24', customer: '佐々木 隆', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: 45800 },
-                    { id: 'ORD-20231024-002', date: '2023-10-24', customer: '松本 真理', product: 'デラックス商品パック', payment: 'クレジットカード', amount: 38900 },
-                    { id: 'ORD-20231024-001', date: '2023-10-24', customer: '井上 健', product: 'スタンダード商品A', payment: '銀行振込', amount: 12500 },
+                    { id: 'ORD-20251028-015', date: '2025-10-28', customer: '田中 太郎', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: randomAmount(35000, 55000) },
+                    { id: 'ORD-20251028-014', date: '2025-10-28', customer: '佐藤 花子', product: 'スタンダード商品A', payment: '銀行振込', amount: randomAmount(10000, 20000) },
+                    { id: 'ORD-20251028-013', date: '2025-10-28', customer: '鈴木 一郎', product: 'デラックス商品パック', payment: 'クレジットカード', amount: randomAmount(30000, 45000) },
+                    { id: 'ORD-20251027-012', date: '2025-10-27', customer: '高橋 美咲', product: 'ベーシック商品B', payment: 'コンビニ決済', amount: randomAmount(7000, 12000) },
+                    { id: 'ORD-20251027-011', date: '2025-10-27', customer: '渡辺 健太', product: 'エコノミー商品C', payment: 'クレジットカード', amount: randomAmount(12000, 18000) },
+                    { id: 'ORD-20251027-010', date: '2025-10-27', customer: '伊藤 由美', product: 'プレミアム商品セット', payment: '銀行振込', amount: randomAmount(35000, 55000) },
+                    { id: 'ORD-20251026-009', date: '2025-10-26', customer: '山本 大輔', product: 'スタンダード商品A', payment: 'クレジットカード', amount: randomAmount(10000, 20000) },
+                    { id: 'ORD-20251026-008', date: '2025-10-26', customer: '中村 愛子', product: 'ラグジュアリー商品', payment: 'クレジットカード', amount: randomAmount(45000, 60000) },
+                    { id: 'ORD-20251026-007', date: '2025-10-26', customer: '小林 誠', product: 'デラックス商品パック', payment: '銀行振込', amount: randomAmount(30000, 45000) },
+                    { id: 'ORD-20251025-006', date: '2025-10-25', customer: '加藤 里奈', product: 'ベーシック商品B', payment: 'コンビニ決済', amount: randomAmount(7000, 12000) },
+                    { id: 'ORD-20251025-005', date: '2025-10-25', customer: '吉田 翔太', product: 'スタンダード商品A', payment: 'クレジットカード', amount: randomAmount(10000, 20000) },
+                    { id: 'ORD-20251025-004', date: '2025-10-25', customer: '山田 さくら', product: 'エコノミー商品C', payment: '銀行振込', amount: randomAmount(12000, 18000) },
+                    { id: 'ORD-20251024-003', date: '2025-10-24', customer: '佐々木 隆', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: randomAmount(35000, 55000) },
+                    { id: 'ORD-20251024-002', date: '2025-10-24', customer: '松本 真理', product: 'デラックス商品パック', payment: 'クレジットカード', amount: randomAmount(30000, 45000) },
+                    { id: 'ORD-20251024-001', date: '2025-10-24', customer: '井上 健', product: 'スタンダード商品A', payment: '銀行振込', amount: randomAmount(10000, 20000) },
                   ].map((order) => (
                     <tr key={order.id} className="hover:bg-gray-50">
                       <td className="px-4 py-3 text-sm text-gray-900 font-medium">{order.id}</td>
