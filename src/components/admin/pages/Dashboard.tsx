@@ -155,6 +155,79 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
         </div>
       </div>
 
+      <div className="space-y-10 mb-6">
+        <div className="bg-white rounded shadow-sm p-5">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-xl font-bold text-[#1976D2]">ショップの状況</h2>
+            <button
+              className="w-8 h-8 rounded-full bg-[#1976D2] hover:bg-[#1565C0] flex items-center justify-center transition-colors"
+              aria-label="更新"
+            >
+              <RefreshCw className="w-4 h-4 text-white" />
+            </button>
+          </div>
+          <div className="h-0.5 bg-[#1976D2] mb-5"></div>
+
+          <div className="border border-[#CCC] rounded">
+            <table className="w-full">
+              <tbody>
+                <tr className="border-b border-[#CCC]">
+                  <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">現在の会員数</td>
+                  <td className="bg-white px-4 py-3 text-right">252,777名</td>
+                </tr>
+                <tr className="border-b border-[#CCC]">
+                  <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">会員の保持ポイント合計</td>
+                  <td className="bg-white px-4 py-3 text-right">0pt</td>
+                </tr>
+                <tr className="border-b border-[#CCC]">
+                  <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">レビュー書き込み　未処理数</td>
+                  <td className="bg-white px-4 py-3 text-right">19件</td>
+                </tr>
+                <tr className="border-b border-[#CCC]">
+                  <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">レビュー書き込み　非表示数</td>
+                  <td className="bg-white px-4 py-3 text-right">95件</td>
+                </tr>
+                <tr>
+                  <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">品切れ商品</td>
+                  <td className="bg-white px-4 py-3 text-right">
+                    <a href="#" className="text-[#1976D2] hover:underline">2833:古着deワクチン（CCテスト用）</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="bg-white rounded shadow-sm p-5">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-xl font-bold text-[#1976D2]">大量メール配信オプション利用状況</h2>
+            <button
+              className="w-8 h-8 rounded-full bg-[#1976D2] hover:bg-[#1565C0] flex items-center justify-center transition-colors"
+              aria-label="更新"
+            >
+              <RefreshCw className="w-4 h-4 text-white" />
+            </button>
+          </div>
+          <div className="h-0.5 bg-[#1976D2] mb-5"></div>
+
+          <div className="mb-4">
+            <span className="text-base">当月【2025-10】の送信総数</span>
+            <a href="#" className="text-[#1976D2] hover:underline ml-2">（先月分を表示）</a>
+          </div>
+
+          <div className="border border-[#CCC] rounded">
+            <table className="w-full">
+              <tbody>
+                <tr>
+                  <td className="bg-[#E3F2FD] px-4 py-3 border-r border-[#CCC]">大量メール配信オプション 送信総数</td>
+                  <td className="bg-white px-4 py-3 text-right">20,557通</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {stats.map((stat) => {
           const Icon = stat.icon;
