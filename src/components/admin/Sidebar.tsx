@@ -32,11 +32,12 @@ interface SidebarProps {
   currentPage: string;
   onPageChange: (page: string) => void;
   onLogout: () => void;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-export default function Sidebar({ currentPage, onPageChange, onLogout }: SidebarProps) {
+export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, onToggle }: SidebarProps) {
   const [expandedMenus, setExpandedMenus] = useState<string[]>([]);
-  const [isPinned, setIsPinned] = useState(false);
 
   const toggleMenu = (menuId: string) => {
     setExpandedMenus(prev =>
@@ -176,31 +177,24 @@ export default function Sidebar({ currentPage, onPageChange, onLogout }: Sidebar
   ];
 
   return (
-    <aside className={`bg-white border-r border-gray-200 flex flex-col shadow-sm transition-all duration-300 group ${
-      isPinned ? 'w-64' : 'w-14 hover:w-64'
-    }`}>
-      <div className="h-14 border-b border-gray-200 flex items-center px-4 transition-all">
-        <div className={`flex items-center gap-2 ${
-          isPinned ? 'w-full justify-between' : 'justify-center group-hover:w-full group-hover:justify-between'
-        }`}>
-          <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Package className="w-5 h-5 text-gray-600" />
+    <>
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={onToggle}
+        />
+      )}
+      <aside className={`fixed left-0 top-0 bottom-0 bg-white border-r border-gray-200 flex flex-col shadow-lg transition-transform duration-300 z-50 w-64 ${
+        isOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
+        <div className="h-14 border-b border-gray-200 flex items-center px-4 justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <Package className="w-5 h-5 text-gray-600" />
+            </div>
+            <span className="text-sm font-semibold text-gray-700">メニュー</span>
           </div>
-          <button
-            onClick={() => setIsPinned(!isPinned)}
-            className={`flex-shrink-0 p-1.5 rounded hover:bg-gray-100 transition-all ${
-              isPinned ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-            }`}
-            title={isPinned ? 'サイドバーの固定を解除' : 'サイドバーを固定'}
-          >
-            {isPinned ? (
-              <PinOff className="w-4 h-4 text-gray-600" />
-            ) : (
-              <Pin className="w-4 h-4 text-gray-600" />
-            )}
-          </button>
         </div>
-      </div>
 
       <nav className="flex-1 py-2 overflow-y-auto">
         {menuItems.map((item) => {
@@ -221,8 +215,6 @@ export default function Sidebar({ currentPage, onPageChange, onLogout }: Sidebar
                   }
                 }}
                 className={`w-full flex items-center gap-3 px-4 py-3 transition-all relative ${
-                  isPinned ? 'justify-start' : 'justify-center group-hover:justify-start'
-                } ${
                   isActive || isParentActive
                     ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-700 hover:bg-gray-50'
@@ -234,20 +226,18 @@ export default function Sidebar({ currentPage, onPageChange, onLogout }: Sidebar
                 <Icon className={`w-5 h-5 flex-shrink-0 ${
                   isActive || isParentActive ? 'text-blue-600' : 'text-gray-600'
                 }`} />
-                <span className={`text-sm font-medium whitespace-nowrap ${
-                  isPinned ? 'block' : 'hidden group-hover:block'
-                }`}>{item.label}</span>
+                <span className="text-sm font-medium whitespace-nowrap">{item.label}</span>
                 {hasChildren && (
                   <ChevronDown
                     className={`w-4 h-4 ml-auto transition-transform ${
-                      isPinned ? 'block' : 'hidden group-hover:block'
-                    } ${isExpanded ? 'transform rotate-180' : ''}`}
+                      isExpanded ? 'transform rotate-180' : ''
+                    }`}
                   />
                 )}
               </button>
 
               {hasChildren && isExpanded && (
-                <div className={`bg-gray-50 ${isPinned ? 'block' : 'hidden group-hover:block'}`}>
+                <div className="bg-gray-50">
                   {item.children.map((child: any) => {
                     const isChildActive = currentPage === child.id;
                     return (
@@ -277,12 +267,13 @@ export default function Sidebar({ currentPage, onPageChange, onLogout }: Sidebar
       <div className="border-t border-gray-200">
         <button
           onClick={onLogout}
-          className="w-full flex items-center justify-center group-hover:justify-start gap-3 px-4 py-3 text-red-600 hover:bg-red-50 transition-all"
+          className="w-full flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 transition-all"
         >
           <LogOut className="w-5 h-5 flex-shrink-0" />
-          <span className={`text-sm font-medium ${isPinned ? 'block' : 'hidden group-hover:block'}`}>ログアウト</span>
+          <span className="text-sm font-medium">ログアウト</span>
         </button>
       </div>
     </aside>
+    </>
   );
 }

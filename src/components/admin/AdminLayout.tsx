@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Sidebar from './Sidebar';
+import Header from './Header';
 import Dashboard from './pages/Dashboard';
 import OrderList from './pages/OrderList';
 import ProductList from './pages/ProductList';
@@ -18,6 +19,7 @@ interface AdminLayoutProps {
 
 export default function AdminLayout({ onLogout, currentUser }: AdminLayoutProps) {
   const [currentPage, setCurrentPage] = useState('dashboard');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -48,10 +50,23 @@ export default function AdminLayout({ onLogout, currentUser }: AdminLayoutProps)
 
   return (
     <div className="flex h-screen bg-gray-50">
-      <Sidebar currentPage={currentPage} onPageChange={setCurrentPage} onLogout={onLogout} />
-      <main className="flex-1 overflow-auto">
-        {renderPage()}
-      </main>
+      <Sidebar
+        currentPage={currentPage}
+        onPageChange={setCurrentPage}
+        onLogout={onLogout}
+        isOpen={isSidebarOpen}
+        onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+      />
+      <div className="flex-1 flex flex-col">
+        <Header
+          currentUser={currentUser}
+          onLogout={onLogout}
+          onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        />
+        <main className="flex-1 overflow-auto">
+          {renderPage()}
+        </main>
+      </div>
     </div>
   );
 }
