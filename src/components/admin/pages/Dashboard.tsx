@@ -109,7 +109,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
     <div className="p-6 bg-gray-50">
       <div className="mb-6 flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">ダッシュボード</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">ホーム</h1>
           <div className="flex items-center text-sm text-gray-600">
             <Calendar className="w-4 h-4 mr-2" />
             <span>2023年11月1日 (水) 更新</span>
