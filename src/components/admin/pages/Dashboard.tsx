@@ -181,29 +181,11 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-gray-900">週次売上推移</h2>
-            <span className="text-sm text-gray-500">直近7日間</span>
-          </div>
-          <div className="space-y-4">
-            {weeklyData.map((data) => (
-              <div key={data.day} className="flex items-center gap-4">
-                <div className="w-10 text-sm font-semibold text-gray-700">{data.day}曜日</div>
-                <div className="flex-1">
-                  <div className="h-12 bg-gray-100 rounded-lg overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg flex items-center px-4 transition-all"
-                      style={{ width: `${(data.amount / maxAmount) * 100}%` }}
-                    >
-                      <span className="text-sm font-semibold text-slate-900">
-                        ¥{data.amount.toLocaleString()}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <img
+            src="/src/assets/image copy copy.png"
+            alt="昨日までの売上推移（直近7日間）"
+            className="w-full h-auto"
+          />
         </div>
 
         <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
