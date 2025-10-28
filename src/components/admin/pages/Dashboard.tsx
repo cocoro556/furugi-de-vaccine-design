@@ -182,11 +182,69 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-            <img
-              src="/src/assets/image copy copy copy.png"
-              alt="売上サマリ"
-              className="w-full h-auto"
-            />
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-lg font-bold text-gray-900">売上サマリ [2025-10-29 00:34 (水) 現在]</h2>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-700 mb-3 bg-gray-50 px-3 py-2 rounded">前日 [2025-10-28] の売上</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-blue-50 border-b border-blue-200">
+                        <th className="px-4 py-3 text-left text-gray-700 font-semibold">受注件数</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">商品代金合計(税別)</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">平均額(円)</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">請求額(税込)</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">金額(円)</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">平均額(円)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50">
+                        <td className="px-4 py-3 text-left font-medium text-gray-900">260</td>
+                        <td className="px-4 py-3 text-right text-gray-900">1,026,324</td>
+                        <td className="px-4 py-3 text-right text-gray-900">3,947</td>
+                        <td className="px-4 py-3 text-right text-gray-900">1,144,000</td>
+                        <td className="px-4 py-3 text-right text-gray-900">4,400</td>
+                        <td className="px-4 py-3 text-right text-gray-900"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-gray-700 mb-3 bg-gray-50 px-3 py-2 rounded">
+                  当月 [2025-10] の売上累計 <span className="text-blue-600 ml-2">(年月分を表示)</span>
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-blue-50 border-b border-blue-200">
+                        <th className="px-4 py-3 text-left text-gray-700 font-semibold">受注件数</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">商品代金合計(税別)</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">平均額(円)</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">請求額(税込)</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">金額(円)</th>
+                        <th className="px-4 py-3 text-right text-gray-700 font-semibold">平均額(円)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50">
+                        <td className="px-4 py-3 text-left font-medium text-gray-900">6,595</td>
+                        <td className="px-4 py-3 text-right text-gray-900">25,811,580</td>
+                        <td className="px-4 py-3 text-right text-gray-900">3,913</td>
+                        <td className="px-4 py-3 text-right text-gray-900">28,709,000</td>
+                        <td className="px-4 py-3 text-right text-gray-900">4,353</td>
+                        <td className="px-4 py-3 text-right text-gray-900"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
