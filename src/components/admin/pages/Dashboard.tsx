@@ -313,68 +313,10 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-black rounded-lg p-4 shadow-sm border-4 border-transparent bg-clip-padding relative"
-               style={{
-                 background: 'linear-gradient(#000, #000) padding-box, linear-gradient(135deg, #00E5FF, #FF1744) border-box'
-               }}>
-            <div className="space-y-4">
-              <div className="flex justify-center">
-                <span className="bg-pink-600 text-white px-4 py-1.5 rounded-full text-xs font-bold">
-                  ダミーバッジ
-                </span>
-              </div>
-
-              <div className="text-center space-y-1">
-                <h2 className="text-white text-2xl font-bold">ダミータイトル</h2>
-                <h3 className="text-white text-xl font-bold">ダミーサブタイトル</h3>
-              </div>
-
-              <ul className="text-white text-sm space-y-2 leading-relaxed">
-                <li>• ダミーテキスト1</li>
-                <li>• ダミーテキスト2</li>
-                <li>• ダミーテキスト3</li>
-              </ul>
-
-              <p className="text-white text-center text-sm">
-                ダミー詳細情報
-              </p>
-
-              <div className="flex justify-center">
-                <button
-                  className="text-white font-bold text-base px-8 py-3 rounded-lg transition-all hover:opacity-90"
-                  style={{
-                    background: 'linear-gradient(135deg, #00E5FF, #FF1744)'
-                  }}
-                >
-                  ▶ ダミーボタン
-                </button>
-              </div>
-
-              <div className="text-gray-400 text-xs text-center space-y-0.5">
-                <p>ダミー主催者情報</p>
-                <p>ダミー協賛情報</p>
-              </div>
-            </div>
+          <div className="bg-sky-400 rounded-lg shadow-sm border border-gray-200" style={{ minHeight: '600px' }}>
           </div>
 
-          <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-            <h3 className="text-gray-900 text-lg font-bold text-center mb-3">
-              【 ダミー見出し 】
-            </h3>
-
-            <div className="space-y-3 flex flex-col">
-              <button className="w-full bg-white border-2 border-black text-black font-bold text-base py-3 rounded-lg hover:bg-gray-50 transition-colors">
-                ダミーボタン1
-              </button>
-
-              <button className="w-full bg-orange-500 text-white font-bold text-base py-3 rounded-lg hover:bg-orange-600 transition-colors">
-                ダミーボタン2
-              </button>
-
-              <button className="w-full bg-orange-500 text-white font-bold text-base py-3 rounded-lg hover:bg-orange-600 transition-colors">
-                ダミーボタン3
-              </button>
-            </div>
+          <div className="bg-sky-400 rounded-lg shadow-sm border border-gray-200" style={{ minHeight: '400px' }}>
           </div>
         </div>
       </div>
