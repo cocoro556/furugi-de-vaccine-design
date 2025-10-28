@@ -256,8 +256,8 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           </div>
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="px-6 py-4 border-b-2 border-red-500 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-red-600">新規受付一覧</h2>
+            <div className="px-6 py-4 border-b-2 border-blue-500 flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-blue-600">新規受付一覧</h2>
               <button
                 onClick={() => window.location.reload()}
                 className="p-2 text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
