@@ -217,7 +217,14 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
 
           return (
             <div key={item.id}>
-              <button
+              <div
+                className={`w-full flex items-center gap-3 px-4 py-3 transition-all relative cursor-pointer ${
+                  isOpen ? 'justify-start' : 'justify-center'
+                } ${
+                  isActive || isParentActive
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-700 hover:bg-gray-50'
+                }`}
                 onClick={() => {
                   if (hasChildren) {
                     toggleMenu(item.id);
@@ -225,13 +232,6 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
                     onPageChange(item.id);
                   }
                 }}
-                className={`w-full flex items-center gap-3 px-4 py-3 transition-all relative ${
-                  isOpen ? 'justify-start' : 'justify-center'
-                } ${
-                  isActive || isParentActive
-                    ? 'bg-blue-50 text-blue-600'
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
               >
                 {(isActive || isParentActive) && (
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600"></div>
@@ -251,7 +251,7 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
                     )}
                   </>
                 )}
-              </button>
+              </div>
 
               {hasChildren && isExpanded && isOpen && (
                 <div className="bg-gray-50">
