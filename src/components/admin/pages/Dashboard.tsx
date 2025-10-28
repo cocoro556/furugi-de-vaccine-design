@@ -180,17 +180,35 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-          <img
-            src="/src/assets/image copy copy copy.png"
-            alt="売上サマリ"
-            className="w-full h-auto mb-6"
-          />
-          <img
-            src="/src/assets/image copy copy.png"
-            alt="昨日までの売上推移（直近7日間）"
-            className="w-full h-auto"
-          />
+        <div className="lg:col-span-2 space-y-6">
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <h2 className="text-lg font-bold text-gray-900 mb-4">売上サマリ</h2>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="bg-gray-50 rounded-lg p-4">
+                <div className="text-sm text-gray-600 mb-1">本日の売上</div>
+                <div className="text-2xl font-bold text-gray-900">¥245,000</div>
+                <div className="text-xs text-green-600 mt-1">+12.5%</div>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-4">
+                <div className="text-sm text-gray-600 mb-1">今月の売上</div>
+                <div className="text-2xl font-bold text-gray-900">¥3,450,000</div>
+                <div className="text-xs text-green-600 mt-1">+8.3%</div>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-4">
+                <div className="text-sm text-gray-600 mb-1">平均客単価</div>
+                <div className="text-2xl font-bold text-gray-900">¥5,104</div>
+                <div className="text-xs text-blue-600 mt-1">+3.2%</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <img
+              src="/src/assets/image copy copy.png"
+              alt="昨日までの売上推移（直近7日間）"
+              className="w-full h-auto"
+            />
+          </div>
         </div>
 
         <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
