@@ -1,4 +1,4 @@
-import { TrendingUp, ShoppingCart, Package, Users, Calendar, User, AlertTriangle, HelpCircle, RefreshCw } from 'lucide-react';
+import { TrendingUp, ShoppingCart, Package, Users, Calendar, User, AlertTriangle, HelpCircle, RefreshCw, Bell } from 'lucide-react';
 
 interface DashboardProps {
   currentUser?: { name: string; email: string };
@@ -117,13 +117,25 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
             </div>
           </div>
           {currentUser && (
-            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200">
-              <div className="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center">
-                <User className="w-4 h-4 text-white" />
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-gray-900">{currentUser.name}</div>
-                <div className="text-xs text-gray-500">{currentUser.email}</div>
+            <div className="flex items-center gap-2">
+              <button className="relative bg-[#00B0FF] hover:bg-[#0091EA] text-white font-bold text-sm px-5 py-2.5 rounded transition-colors">
+                <div className="absolute -top-2 -left-2 w-6 h-6 bg-[#F44336] text-white text-xs rounded-full flex items-center justify-center font-bold">
+                  36
+                </div>
+                お知らせ
+              </button>
+              <button className="bg-[#00B0FF] hover:bg-[#0091EA] text-white font-bold text-sm px-5 py-2.5 rounded transition-colors">
+                FAQ
+              </button>
+              <button className="bg-[#00B0FF] hover:bg-[#0091EA] text-white font-bold text-sm px-5 py-2.5 rounded transition-colors">
+                お問い合わせ
+              </button>
+              <div className="flex flex-col items-center ml-4">
+                <div className="w-12 h-12 bg-[#546E7A] rounded-full flex items-center justify-center mb-1">
+                  <User className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-xs font-medium text-gray-900">管理者様</div>
+                <div className="text-[11px] text-gray-500">{currentUser.email}</div>
               </div>
             </div>
           )}
