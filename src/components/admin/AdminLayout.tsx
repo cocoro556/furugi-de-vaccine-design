@@ -17,8 +17,8 @@ interface AdminLayoutProps {
 }
 
 export default function AdminLayout({ onLogout, currentUser }: AdminLayoutProps) {
-  const [currentPage, setCurrentPage] = useState('page-settings');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [currentPage, setCurrentPage] = useState('dashboard');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderPage = () => {
     switch (currentPage) {

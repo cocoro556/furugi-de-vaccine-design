@@ -29,7 +29,7 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, onToggle }: SidebarProps) {
-  const [expandedMenus, setExpandedMenus] = useState<string[]>([]);
+  const [expandedMenus, setExpandedMenus] = useState<string[]>(['dashboard']);
 
   const toggleMenu = (menuId: string) => {
     setExpandedMenus(prev =>
