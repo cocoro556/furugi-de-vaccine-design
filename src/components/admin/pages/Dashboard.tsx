@@ -439,22 +439,6 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-10 shadow-sm border border-gray-200" style={{ marginTop: '60px' }}>
-            <h3 className="text-gray-900 text-2xl font-bold text-center">
-              【 開催予定のセミナー 】
-            </h3>
-          </div>
-
-          <div className="bg-white rounded-lg p-10 shadow-sm border border-gray-200" style={{ marginTop: '60px' }}>
-            <h3 className="text-gray-900 text-2xl font-bold text-center mb-6">
-              【 連携サービス 】
-            </h3>
-            <div className="flex justify-center">
-              <button className="bg-white border-2 border-black text-black font-bold text-lg px-10 py-4 rounded-lg hover:bg-gray-50 transition-colors">
-                連携サービス一覧
-              </button>
-            </div>
-          </div>
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200" style={{ marginTop: '60px' }}>
             <div className="border-4 border-cyan-500 rounded-lg p-8">
