@@ -1,4 +1,5 @@
 import { TrendingUp, ShoppingCart, Package, Users, Calendar, User, AlertTriangle, HelpCircle, RefreshCw, Bell } from 'lucide-react';
+import SalesChart from './SalesChart';
 
 interface DashboardProps {
   currentUser?: { name: string; email: string };
@@ -260,13 +261,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
-            <img
-              src="/src/assets/image copy copy.png"
-              alt="昨日までの売上推移（直近7日間）"
-              className="w-full h-auto"
-            />
-          </div>
+          <SalesChart />
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
             <div className="px-4 py-3 border-b-2 border-gray-400 flex items-center justify-between">
