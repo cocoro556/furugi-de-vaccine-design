@@ -226,10 +226,17 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
                 onClick={() => {
-                  if (hasChildren) {
-                    toggleMenu(item.id);
+                  if (!isOpen) {
+                    onToggle();
+                    if (hasChildren) {
+                      setTimeout(() => toggleMenu(item.id), 100);
+                    }
                   } else {
-                    onPageChange(item.id);
+                    if (hasChildren) {
+                      toggleMenu(item.id);
+                    } else {
+                      onPageChange(item.id);
+                    }
                   }
                 }}
               >
