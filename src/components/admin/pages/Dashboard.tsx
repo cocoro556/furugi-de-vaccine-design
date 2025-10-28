@@ -152,11 +152,11 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
               <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm text-red-900">
-                  <span className="font-semibold">2025-07-31以降ログインしていないメンバーが8名います。</span>
+                  <span className="font-semibold">2025-07-31以降ログインしていないメンバーが{randomAmount(5, 15)}名います。</span>
                   メンバー管理で稼働・非稼働を設定してください。
                 </p>
                 <p className="text-sm text-gray-700 mt-2">
-                  アラート情報は2025-10-29 00:34:07時点のものです。
+                  アラート情報は2025-10-{randomAmount(20, 28)} {randomAmount(10, 23)}:{randomAmount(10, 59)}:{randomAmount(10, 59)}時点のものです。
                   <button className="text-red-600 font-medium hover:underline ml-1">【▲再チェックする】</button>
                 </p>
               </div>
@@ -200,7 +200,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
         <div className="space-y-4">
           <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-bold text-gray-900">売上サマリ [2025-10-29 00:34 (水) 現在]</h2>
+              <h2 className="text-lg font-bold text-gray-900">売上サマリ [2025-10-{randomAmount(20, 28)} {randomAmount(10, 23)}:{randomAmount(10, 59)} (水) 現在]</h2>
             </div>
 
             <div className="space-y-6">
