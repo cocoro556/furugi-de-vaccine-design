@@ -335,6 +335,159 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
               </button>
             </div>
           </div>
+
+          <div className="bg-white rounded-lg p-10 shadow-sm border border-gray-200">
+            <h3 className="text-gray-900 text-2xl font-bold text-center mb-6">
+              【 コールセンター混雑時間帯 】
+            </h3>
+
+            <div className="bg-gray-100 border border-gray-300 rounded-lg p-5 mb-6 text-center">
+              <div className="font-bold text-gray-900 mb-2">【営業時間】</div>
+              <div className="text-lg text-gray-900">10:00～17:00（土日祝除く）</div>
+            </div>
+
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-300 p-2.5 text-center bg-gray-50"></th>
+                    <th className="border border-gray-300 p-2.5 text-center bg-gray-50">月</th>
+                    <th className="border border-gray-300 p-2.5 text-center bg-gray-50">火</th>
+                    <th className="border border-gray-300 p-2.5 text-center bg-gray-50">水</th>
+                    <th className="border border-gray-300 p-2.5 text-center bg-gray-50">木</th>
+                    <th className="border border-gray-300 p-2.5 text-center bg-gray-50">金</th>
+                    <th className="border border-gray-300 p-2.5 text-center bg-gray-50">土日祝</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-50 font-medium">10時台</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-100 text-gray-500 text-sm" rowSpan={8}>対応時間外</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-50 font-medium">11時台</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-50 font-medium">12時台</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-50 font-medium">13時台</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-yellow-100">△</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-yellow-100">△</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-yellow-100">△</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-yellow-100">△</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-yellow-100">△</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-50 font-medium">14時台</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-50 font-medium">15時台</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-white">○</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-50 font-medium">16時台</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-sky-100">◎</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-50 font-medium">17時以降</td>
+                    <td className="border border-gray-300 p-2.5 text-center bg-gray-100 text-gray-500 text-sm" colSpan={5}>対応時間外</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="text-sm text-gray-700 space-y-1">
+              <p>◎ or ○ ···混雑していない</p>
+              <p>△ ···混雑している</p>
+              <p className="flex items-center gap-2">
+                <span className="inline-block w-4 h-4 bg-sky-100 border border-gray-300"></span>
+                青色ボックス ···比較的つながりやすい時間帯
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="inline-block w-4 h-4 bg-yellow-100 border border-gray-300"></span>
+                黄色ボックス ···大変混雑している時間帯
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg p-10 shadow-sm border border-gray-200" style={{ marginTop: '60px' }}>
+            <h3 className="text-gray-900 text-2xl font-bold text-center">
+              【 開催予定のセミナー 】
+            </h3>
+          </div>
+
+          <div className="bg-white rounded-lg p-10 shadow-sm border border-gray-200" style={{ marginTop: '60px' }}>
+            <h3 className="text-gray-900 text-2xl font-bold text-center mb-6">
+              【 連携サービス 】
+            </h3>
+            <div className="flex justify-center">
+              <button className="bg-white border-2 border-black text-black font-bold text-lg px-10 py-4 rounded-lg hover:bg-gray-50 transition-colors">
+                連携サービス一覧
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200" style={{ marginTop: '60px' }}>
+            <div className="border-4 border-cyan-500 rounded-lg p-8">
+              <h3 className="text-cyan-500 text-2xl font-bold text-center mb-6">
+                個別勉強会のお知らせ
+              </h3>
+
+              <div className="text-gray-900 text-base space-y-4 leading-relaxed">
+                <p>各回1社様ごと、個別での勉強会を開催します。</p>
+                <p>参加をご希望の方はお問合せフォームよりお問合せください。</p>
+
+                <p className="text-red-600 font-bold">
+                  「参加希望のプログラム」と「希望日程」をお問い合わせ内容にご記載ください。
+                </p>
+
+                <hr className="border-t border-gray-300 my-6" />
+
+                <div className="space-y-2">
+                  <p>＜プログラム5:ステップメール機能＞</p>
+                  <p>＜プログラム4:アップセルクロスセル機能＞</p>
+                  <p>＜プログラム3:お友達機能（リファラルマーケティング）勉強会＞</p>
+                  <p>＜プログラム2:封入物勉強会＞</p>
+                  <p>＜プログラム1:メルマガ機能＞</p>
+                </div>
+
+                <hr className="border-t border-gray-300 my-6" />
+
+                <p className="text-cyan-500 font-bold">
+                  →お問合せフォームへ
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
