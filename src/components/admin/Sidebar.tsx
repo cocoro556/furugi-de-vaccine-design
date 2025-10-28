@@ -25,6 +25,8 @@ import {
   Image,
   Pin,
   PinOff,
+  PanelLeft,
+  PanelLeftClose,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -186,7 +188,11 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
           className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors"
           title={isOpen ? 'メニューを閉じる' : 'メニューを開く'}
         >
-          <Package className="w-5 h-5 text-gray-600" />
+          {isOpen ? (
+            <PanelLeftClose className="w-5 h-5 text-gray-600" />
+          ) : (
+            <PanelLeft className="w-5 h-5 text-gray-600" />
+          )}
         </button>
       </div>
 
