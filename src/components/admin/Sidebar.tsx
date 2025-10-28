@@ -29,7 +29,7 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, onToggle }: SidebarProps) {
-  const [expandedMenus, setExpandedMenus] = useState<string[]>([]);
+  const [expandedMenus, setExpandedMenus] = useState<string[]>(['basic-settings']);
 
   const toggleMenu = (menuId: string) => {
     setExpandedMenus(prev =>
@@ -41,7 +41,34 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
 
   const menuItems = [
     { id: 'dashboard', label: 'ホーム', icon: Home },
-    { id: 'basic-settings', label: '基本設定', icon: FileText },
+    {
+      id: 'basic-settings',
+      label: '基本設定',
+      icon: FileText,
+      children: [
+        { id: 'basic-settings', label: '基本設定' },
+        { id: 'store-settings', label: '店舗設定' },
+        { id: 'shipping-carrier-settings', label: '配送業者設定' },
+        { id: 'shipping-method-settings', label: '配送方法設定' },
+        { id: 'payment-method-settings', label: '支払方法設定' },
+        { id: 'tax-rate-settings', label: '税率設定' },
+        { id: 'calendar-settings', label: 'カレンダー設定' },
+        { id: 'delivery-date-settings', label: 'お届け希望日非表示設定' },
+        { id: 'special-commerce-law', label: '特定商取引法' },
+        { id: 'privacy-policy', label: 'プライバシーポリシー' },
+        { id: 'member-terms', label: '会員規約設定' },
+        { id: 'purchase-terms', label: '購入時利用規約設定' },
+        { id: 'payment-info-settings', label: '納期情報設定' },
+        { id: 'remote-island-settings', label: '離島情報設定' },
+        { id: 'remote-island-csv', label: '離島情報CSV登録' },
+        { id: 'analysis-tag-settings', label: '分析タグ設定' },
+        { id: 'affiliate-settings', label: 'アフィリエイト設定' },
+        { id: 'cart-system-settings', label: 'カートシステム設定' },
+        { id: 'admin-system-settings', label: '管理システム設定' },
+        { id: 'external-app-integration', label: '外部アプリ連携' },
+        { id: 'terms-confirmation', label: 'ご利用規約のご確認' },
+      ],
+    },
     { id: 'design-pc', label: 'デザインPC', icon: Monitor },
     { id: 'design-sp', label: 'デザインSP', icon: Smartphone },
     { id: 'management', label: '運営', icon: Store },
