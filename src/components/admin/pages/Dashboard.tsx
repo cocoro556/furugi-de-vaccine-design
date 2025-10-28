@@ -182,11 +182,33 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-            <img
-              src="/src/assets/image copy copy copy.png"
-              alt="売上サマリ"
-              className="w-full h-auto"
-            />
+            <h2 className="text-lg font-bold text-gray-900 mb-6">売上サマリ</h2>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="text-sm text-gray-600 mb-2">本日の売上</div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">¥245,000</div>
+                <div className="flex items-center text-xs text-green-600">
+                  <TrendingUp className="w-3 h-3 mr-1" />
+                  +12.5%
+                </div>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="text-sm text-gray-600 mb-2">今月の売上</div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">¥3,450,000</div>
+                <div className="flex items-center text-xs text-green-600">
+                  <TrendingUp className="w-3 h-3 mr-1" />
+                  +8.3%
+                </div>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="text-sm text-gray-600 mb-2">平均客単価</div>
+                <div className="text-2xl font-bold text-gray-900 mb-1">¥5,104</div>
+                <div className="flex items-center text-xs text-blue-600">
+                  <TrendingUp className="w-3 h-3 mr-1" />
+                  +3.2%
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
