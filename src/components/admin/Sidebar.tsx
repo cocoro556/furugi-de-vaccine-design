@@ -46,7 +46,6 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
       label: '基本設定',
       icon: FileText,
       children: [
-        { id: 'basic-settings', label: '基本設定' },
         { id: 'store-settings', label: '店舗設定' },
         { id: 'shipping-carrier-settings', label: '配送業者設定' },
         { id: 'shipping-method-settings', label: '配送方法設定' },
