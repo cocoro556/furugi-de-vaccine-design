@@ -107,19 +107,18 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
 
   return (
     <div className="p-6 bg-gray-50">
-      <div className="mb-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <p className="text-sm text-blue-800">
-          <span className="font-semibold">これはあくまでもサンプルです。</span>
-          参考に似たようなものを作って、処理方法はこちらをご参照ください。
-        </p>
-      </div>
-
       <div className="mb-6 flex items-start justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">ホーム</h1>
-          <div className="flex items-center text-sm text-gray-600">
+          <div className="flex items-center text-sm text-gray-600 mb-3">
             <Calendar className="w-4 h-4 mr-2" />
             <span>2023年11月1日 (水) 更新</span>
+          </div>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 inline-block">
+            <p className="text-sm text-blue-800">
+              <span className="font-semibold">これはあくまでもサンプルです。</span>
+              参考に似たようなものを作って、処理方法はこちらをご参照ください。
+            </p>
           </div>
         </div>
         {currentUser && (
