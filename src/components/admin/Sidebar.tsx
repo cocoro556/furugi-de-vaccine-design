@@ -188,7 +188,7 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
     <aside className={`bg-white border-r border-gray-200 flex flex-col shadow-sm transition-all duration-300 ${
       isOpen ? 'w-64' : 'w-14'
     }`}>
-      <div className="h-14 border-b border-gray-200 flex items-center px-4 transition-all">
+      <div className="h-14 border-b border-gray-200 flex items-center px-4 gap-3 transition-all">
         <button
           onClick={onToggle}
           className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors"
@@ -200,6 +200,9 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
             <PanelLeft className="w-5 h-5 text-gray-600" />
           )}
         </button>
+        {isOpen && (
+          <span className="text-lg font-bold text-gray-800">楽楽リピート</span>
+        )}
       </div>
 
       <nav className="flex-1 py-2 overflow-y-auto">
