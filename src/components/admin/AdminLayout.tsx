@@ -17,11 +17,19 @@ interface AdminLayoutProps {
 }
 
 export default function AdminLayout({ onLogout, currentUser }: AdminLayoutProps) {
-  const [currentPage, setCurrentPage] = useState('dashboard');
+  const [currentPage, setCurrentPage] = useState('basic-settings');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const renderPage = () => {
     switch (currentPage) {
+      case 'basic-settings':
+        return <Dashboard currentUser={currentUser} />;
+      case 'design-pc':
+        return <Dashboard currentUser={currentUser} />;
+      case 'design-sp':
+        return <Dashboard currentUser={currentUser} />;
+      case 'management':
+        return <Dashboard currentUser={currentUser} />;
       case 'dashboard':
         return <Dashboard currentUser={currentUser} />;
       case 'orders':
