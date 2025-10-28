@@ -182,6 +182,11 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 bg-white rounded-lg p-6 shadow-sm border border-gray-200">
           <img
+            src="/src/assets/image copy copy copy.png"
+            alt="売上サマリ"
+            className="w-full h-auto mb-6"
+          />
+          <img
             src="/src/assets/image copy copy.png"
             alt="昨日までの売上推移（直近7日間）"
             className="w-full h-auto"
