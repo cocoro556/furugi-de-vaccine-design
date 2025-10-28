@@ -1,4 +1,4 @@
-import { TrendingUp, ShoppingCart, Package, Users, Calendar, User, AlertTriangle, HelpCircle } from 'lucide-react';
+import { TrendingUp, ShoppingCart, Package, Users, Calendar, User, AlertTriangle, HelpCircle, RefreshCw } from 'lucide-react';
 
 interface DashboardProps {
   currentUser?: { name: string; email: string };
@@ -253,6 +253,62 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
               alt="昨日までの売上推移（直近7日間）"
               className="w-full h-auto"
             />
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            <div className="px-6 py-4 border-b-2 border-red-500 flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-red-600">新規受付一覧</h2>
+              <button
+                onClick={() => window.location.reload()}
+                className="p-2 text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
+                title="更新"
+              >
+                <RefreshCw className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">受注ID</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">受注日</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">顧客名</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">購入商品</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">支払方法</th>
+                    <th className="px-4 py-3 text-right text-sm font-semibold text-gray-700">ご請求金額（円）</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {[
+                    { id: 'ORD-20231028-015', date: '2023-10-28', customer: '田中 太郎', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: 45800 },
+                    { id: 'ORD-20231028-014', date: '2023-10-28', customer: '佐藤 花子', product: 'スタンダード商品A', payment: '銀行振込', amount: 12500 },
+                    { id: 'ORD-20231028-013', date: '2023-10-28', customer: '鈴木 一郎', product: 'デラックス商品パック', payment: 'クレジットカード', amount: 38900 },
+                    { id: 'ORD-20231027-012', date: '2023-10-27', customer: '高橋 美咲', product: 'ベーシック商品B', payment: 'コンビニ決済', amount: 8900 },
+                    { id: 'ORD-20231027-011', date: '2023-10-27', customer: '渡辺 健太', product: 'エコノミー商品C', payment: 'クレジットカード', amount: 15600 },
+                    { id: 'ORD-20231027-010', date: '2023-10-27', customer: '伊藤 由美', product: 'プレミアム商品セット', payment: '銀行振込', amount: 45800 },
+                    { id: 'ORD-20231026-009', date: '2023-10-26', customer: '山本 大輔', product: 'スタンダード商品A', payment: 'クレジットカード', amount: 12500 },
+                    { id: 'ORD-20231026-008', date: '2023-10-26', customer: '中村 愛子', product: 'ラグジュアリー商品', payment: 'クレジットカード', amount: 52000 },
+                    { id: 'ORD-20231026-007', date: '2023-10-26', customer: '小林 誠', product: 'デラックス商品パック', payment: '銀行振込', amount: 38900 },
+                    { id: 'ORD-20231025-006', date: '2023-10-25', customer: '加藤 里奈', product: 'ベーシック商品B', payment: 'コンビニ決済', amount: 8900 },
+                    { id: 'ORD-20231025-005', date: '2023-10-25', customer: '吉田 翔太', product: 'スタンダード商品A', payment: 'クレジットカード', amount: 12500 },
+                    { id: 'ORD-20231025-004', date: '2023-10-25', customer: '山田 さくら', product: 'エコノミー商品C', payment: '銀行振込', amount: 15600 },
+                    { id: 'ORD-20231024-003', date: '2023-10-24', customer: '佐々木 隆', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: 45800 },
+                    { id: 'ORD-20231024-002', date: '2023-10-24', customer: '松本 真理', product: 'デラックス商品パック', payment: 'クレジットカード', amount: 38900 },
+                    { id: 'ORD-20231024-001', date: '2023-10-24', customer: '井上 健', product: 'スタンダード商品A', payment: '銀行振込', amount: 12500 },
+                  ].map((order) => (
+                    <tr key={order.id} className="hover:bg-gray-50">
+                      <td className="px-4 py-3 text-sm text-gray-900 font-medium">{order.id}</td>
+                      <td className="px-4 py-3 text-sm text-gray-900">{order.date}</td>
+                      <td className="px-4 py-3 text-sm text-gray-900">{order.customer}</td>
+                      <td className="px-4 py-3 text-sm text-gray-900">{order.product}</td>
+                      <td className="px-4 py-3 text-sm text-gray-900">{order.payment}</td>
+                      <td className="px-4 py-3 text-sm text-gray-900 text-right font-medium">¥{order.amount.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
