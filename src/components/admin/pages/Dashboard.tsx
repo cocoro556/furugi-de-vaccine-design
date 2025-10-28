@@ -312,36 +312,36 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           </div>
         </div>
 
-        <div className="space-y-6">
-          <div className="bg-black rounded-lg p-10 shadow-sm border-4 border-transparent bg-clip-padding relative"
+        <div className="space-y-6 max-w-md mx-auto">
+          <div className="bg-black rounded-lg p-6 shadow-sm border-4 border-transparent bg-clip-padding relative"
                style={{
                  background: 'linear-gradient(#000, #000) padding-box, linear-gradient(135deg, #00E5FF, #FF1744) border-box'
                }}>
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="flex justify-center">
-                <span className="bg-pink-600 text-white px-5 py-2 rounded-full text-sm font-bold">
+                <span className="bg-pink-600 text-white px-4 py-1.5 rounded-full text-xs font-bold">
                   無料個別相談会
                 </span>
               </div>
 
-              <div className="text-center space-y-2">
-                <h2 className="text-white text-3xl font-bold">TikTok Shop</h2>
-                <h3 className="text-white text-2xl font-bold">はじめての出店をサポート</h3>
+              <div className="text-center space-y-1">
+                <h2 className="text-white text-2xl font-bold">TikTok Shop</h2>
+                <h3 className="text-white text-xl font-bold">はじめての出店をサポート</h3>
               </div>
 
-              <ul className="text-white text-lg space-y-3 leading-relaxed">
+              <ul className="text-white text-sm space-y-2 leading-relaxed">
                 <li>• 動画・SNS集客が初めてでも安心</li>
                 <li>• 売れる導線と動画の型を解説</li>
                 <li>• 在庫・出荷の不安も相談OK</li>
               </ul>
 
-              <p className="text-white text-center text-base">
+              <p className="text-white text-center text-sm">
                 オンライン・60分・参加無料
               </p>
 
               <div className="flex justify-center">
                 <button
-                  className="text-white font-bold text-lg px-10 py-4 rounded-lg transition-all hover:opacity-90"
+                  className="text-white font-bold text-base px-8 py-3 rounded-lg transition-all hover:opacity-90"
                   style={{
                     background: 'linear-gradient(135deg, #00E5FF, #FF1744)'
                   }}
@@ -350,28 +350,28 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
                 </button>
               </div>
 
-              <div className="text-gray-400 text-xs text-center space-y-1">
+              <div className="text-gray-400 text-xs text-center space-y-0.5">
                 <p>主催：スマレジグループ ネットショップ支援室</p>
                 <p>協賛：コマースファクトリー（TikTok認定パートナー）</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
-            <h3 className="text-gray-900 text-2xl font-bold text-center mb-6">
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <h3 className="text-gray-900 text-xl font-bold text-center mb-4">
               【 ご相談・ご質問はこちらまで 】
             </h3>
 
-            <div className="space-y-4 flex flex-col items-center">
-              <button className="w-full max-w-md bg-white border-2 border-black text-black font-bold text-xl py-4 rounded-lg hover:bg-gray-50 transition-colors">
+            <div className="space-y-3 flex flex-col">
+              <button className="w-full bg-white border-2 border-black text-black font-bold text-base py-3 rounded-lg hover:bg-gray-50 transition-colors">
                 FAQ検索
               </button>
 
-              <button className="w-full max-w-md bg-orange-500 text-white font-bold text-xl py-4 rounded-lg hover:bg-orange-600 transition-colors">
+              <button className="w-full bg-orange-500 text-white font-bold text-base py-3 rounded-lg hover:bg-orange-600 transition-colors">
                 お問い合わせフォーム
               </button>
 
-              <button className="w-full max-w-md bg-orange-500 text-white font-bold text-xl py-4 rounded-lg hover:bg-orange-600 transition-colors">
+              <button className="w-full bg-orange-500 text-white font-bold text-base py-3 rounded-lg hover:bg-orange-600 transition-colors">
                 機能オプション一覧とお申込
               </button>
             </div>
