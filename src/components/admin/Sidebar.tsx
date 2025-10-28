@@ -187,23 +187,23 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
   ];
 
   return (
-    <aside className={`bg-white border-r border-gray-200 flex flex-col shadow-sm transition-all duration-300 ${
+    <aside className={`bg-[#2C3E50] border-r border-gray-700 flex flex-col shadow-sm transition-all duration-300 ${
       isOpen ? 'w-64' : 'w-14'
     }`}>
-      <div className="h-14 border-b border-gray-200 flex items-center px-4 gap-3 transition-all">
+      <div className="h-14 border-b border-gray-700 flex items-center px-4 gap-3 transition-all">
         <button
           onClick={onToggle}
-          className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition-colors"
+          className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0 hover:bg-gray-600 transition-colors"
           title={isOpen ? 'メニューを閉じる' : 'メニューを開く'}
         >
           {isOpen ? (
-            <PanelLeftClose className="w-5 h-5 text-gray-600" />
+            <PanelLeftClose className="w-5 h-5 text-white" />
           ) : (
-            <PanelLeft className="w-5 h-5 text-gray-600" />
+            <PanelLeft className="w-5 h-5 text-white" />
           )}
         </button>
         {isOpen && (
-          <span className="text-lg font-bold text-gray-800">楽楽リピート</span>
+          <span className="text-lg font-bold text-white">楽楽リピート</span>
         )}
       </div>
 
@@ -222,8 +222,8 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
                   isOpen ? 'justify-start' : 'justify-center'
                 } ${
                   isActive || isParentActive
-                    ? 'bg-blue-50 text-blue-600'
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? 'bg-gray-700 text-white'
+                    : 'text-gray-300 hover:bg-gray-700'
                 }`}
                 onClick={() => {
                   if (!isOpen) {
@@ -241,10 +241,10 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
                 }}
               >
                 {(isActive || isParentActive) && (
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600"></div>
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-white"></div>
                 )}
                 <Icon className={`w-5 h-5 flex-shrink-0 ${
-                  isActive || isParentActive ? 'text-blue-600' : 'text-gray-600'
+                  isActive || isParentActive ? 'text-white' : 'text-gray-400'
                 }`} />
                 {isOpen && (
                   <>
@@ -261,7 +261,7 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
               </div>
 
               {hasChildren && isExpanded && isOpen && (
-                <div className="bg-gray-50">
+                <div className="bg-gray-800">
                   {item.children.map((child: any) => {
                     const isChildActive = currentPage === child.id;
                     return (
@@ -270,12 +270,12 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
                         onClick={() => onPageChange(child.id)}
                         className={`w-full flex items-center px-12 py-2 text-sm transition-all relative ${
                           isChildActive
-                            ? 'bg-blue-50 text-blue-600 font-medium'
-                            : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                            ? 'bg-gray-700 text-white font-medium'
+                            : 'text-gray-400 hover:bg-gray-700 hover:text-white'
                         }`}
                       >
                         {isChildActive && (
-                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600"></div>
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-white"></div>
                         )}
                         <span className="whitespace-nowrap">{child.label}</span>
                       </button>
@@ -288,10 +288,10 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
         })}
       </nav>
 
-      <div className="border-t border-gray-200">
+      <div className="border-t border-gray-700">
         <button
           onClick={onLogout}
-          className={`w-full flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 transition-all ${
+          className={`w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-gray-700 transition-all ${
             isOpen ? 'justify-start' : 'justify-center'
           }`}
         >
