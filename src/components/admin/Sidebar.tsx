@@ -15,6 +15,7 @@ import {
   ChevronDown,
   PanelLeft,
   PanelLeftClose,
+  FileText,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -38,7 +39,7 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
   };
 
   const menuItems = [
-    { id: 'basic-settings', label: '基本設定', icon: Settings },
+    { id: 'basic-settings', label: '基本設定', icon: FileText },
     { id: 'design-pc', label: 'デザインPC', icon: Monitor },
     { id: 'design-sp', label: 'デザインSP', icon: Smartphone },
     { id: 'management', label: '運営', icon: Store },
