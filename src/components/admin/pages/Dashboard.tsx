@@ -1,4 +1,4 @@
-import { TrendingUp, ShoppingCart, Package, Users, Calendar, User } from 'lucide-react';
+import { TrendingUp, ShoppingCart, Package, Users, Calendar, User, AlertTriangle, HelpCircle } from 'lucide-react';
 
 interface DashboardProps {
   currentUser?: { name: string; email: string };
@@ -107,18 +107,33 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
 
   return (
     <div className="p-6 bg-gray-50">
+      {/* Alert Banner */}
+      <div className="mb-4 bg-red-50 border border-red-200 rounded-lg p-4">
+        <div className="flex items-start gap-3">
+          <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <p className="text-sm text-red-900">
+              <span className="font-semibold">2025-07-31以降ログインしていないメンバーが8名います。</span>
+              メンバー管理で稼働・非稼働を設定してください。
+            </p>
+            <p className="text-sm text-gray-700 mt-2">
+              アラート情報は2025-10-29 00:34:07時点のものです。
+              <button className="text-red-600 font-medium hover:underline ml-1">【▲再チェックする】</button>
+            </p>
+          </div>
+          <button className="flex items-center gap-1 text-blue-600 text-sm font-medium hover:underline flex-shrink-0">
+            処理方法はこちらをご参照下さい
+            <HelpCircle className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
       <div className="mb-6 flex items-start justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">ホーム</h1>
-          <div className="flex items-center text-sm text-gray-600 mb-3">
+          <div className="flex items-center text-sm text-gray-600">
             <Calendar className="w-4 h-4 mr-2" />
             <span>2023年11月1日 (水) 更新</span>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 inline-block">
-            <p className="text-sm text-blue-800">
-              <span className="font-semibold">これはあくまでもサンプルです。</span>
-              参考に似たようなものを作って、処理方法はこちらをご参照ください。
-            </p>
           </div>
         </div>
         {currentUser && (
