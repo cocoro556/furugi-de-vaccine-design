@@ -116,20 +116,24 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           </div>
 
           {/* Alert Banner */}
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <div className="flex items-start gap-3">
-              <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-              <div className="flex-1">
-                <p className="text-sm text-red-900">
-                  <span className="font-semibold">2025-07-31以降ログインしていないメンバーが8名います。</span>
-                  メンバー管理で稼働・非稼働を設定してください。
-                </p>
-                <p className="text-sm text-gray-700 mt-2">
-                  アラート情報は2025-10-29 00:34:07時点のものです。
-                  <button className="text-red-600 font-medium hover:underline ml-1">【▲再チェックする】</button>
-                </p>
+          <div className="space-y-2">
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="text-sm text-red-900">
+                    <span className="font-semibold">2025-07-31以降ログインしていないメンバーが8名います。</span>
+                    メンバー管理で稼働・非稼働を設定してください。
+                  </p>
+                  <p className="text-sm text-gray-700 mt-2">
+                    アラート情報は2025-10-29 00:34:07時点のものです。
+                    <button className="text-red-600 font-medium hover:underline ml-1">【▲再チェックする】</button>
+                  </p>
+                </div>
               </div>
-              <button className="flex items-center gap-1 text-blue-600 text-sm font-medium hover:underline flex-shrink-0">
+            </div>
+            <div className="flex justify-end">
+              <button className="flex items-center gap-1 text-blue-600 text-sm font-medium hover:underline">
                 処理方法はこちらをご参照下さい
                 <HelpCircle className="w-4 h-4" />
               </button>
