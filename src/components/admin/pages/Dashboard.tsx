@@ -336,7 +336,40 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-10 shadow-sm border border-gray-200">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+            <div className="border-4 border-cyan-500 rounded-lg p-8">
+              <h3 className="text-cyan-500 text-2xl font-bold text-center mb-6">
+                個別勉強会のお知らせ
+              </h3>
+
+              <div className="text-gray-900 text-base space-y-4 leading-relaxed">
+                <p>各回1社様ごと、個別での勉強会を開催します。</p>
+                <p>参加をご希望の方はお問合せフォームよりお問合せください。</p>
+
+                <p className="text-red-600 font-bold">
+                  「参加希望のプログラム」と「希望日程」をお問い合わせ内容にご記載ください。
+                </p>
+
+                <hr className="border-t border-gray-300 my-6" />
+
+                <div className="space-y-2">
+                  <p>＜プログラム5:ステップメール機能＞</p>
+                  <p>＜プログラム4:アップセルクロスセル機能＞</p>
+                  <p>＜プログラム3:お友達機能（リファラルマーケティング）勉強会＞</p>
+                  <p>＜プログラム2:封入物勉強会＞</p>
+                  <p>＜プログラム1:メルマガ機能＞</p>
+                </div>
+
+                <hr className="border-t border-gray-300 my-6" />
+
+                <p className="text-cyan-500 font-bold">
+                  →お問合せフォームへ
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg p-10 shadow-sm border border-gray-200" style={{ marginTop: '60px' }}>
             <h3 className="text-gray-900 text-2xl font-bold text-center mb-6">
               【 コールセンター混雑時間帯 】
             </h3>
@@ -436,40 +469,6 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
                 <span className="inline-block w-4 h-4 bg-yellow-100 border border-gray-300"></span>
                 黄色ボックス ···大変混雑している時間帯
               </p>
-            </div>
-          </div>
-
-
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200" style={{ marginTop: '60px' }}>
-            <div className="border-4 border-cyan-500 rounded-lg p-8">
-              <h3 className="text-cyan-500 text-2xl font-bold text-center mb-6">
-                個別勉強会のお知らせ
-              </h3>
-
-              <div className="text-gray-900 text-base space-y-4 leading-relaxed">
-                <p>各回1社様ごと、個別での勉強会を開催します。</p>
-                <p>参加をご希望の方はお問合せフォームよりお問合せください。</p>
-
-                <p className="text-red-600 font-bold">
-                  「参加希望のプログラム」と「希望日程」をお問い合わせ内容にご記載ください。
-                </p>
-
-                <hr className="border-t border-gray-300 my-6" />
-
-                <div className="space-y-2">
-                  <p>＜プログラム5:ステップメール機能＞</p>
-                  <p>＜プログラム4:アップセルクロスセル機能＞</p>
-                  <p>＜プログラム3:お友達機能（リファラルマーケティング）勉強会＞</p>
-                  <p>＜プログラム2:封入物勉強会＞</p>
-                  <p>＜プログラム1:メルマガ機能＞</p>
-                </div>
-
-                <hr className="border-t border-gray-300 my-6" />
-
-                <p className="text-cyan-500 font-bold">
-                  →お問合せフォームへ
-                </p>
-              </div>
             </div>
           </div>
         </div>
