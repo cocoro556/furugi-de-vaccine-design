@@ -73,7 +73,6 @@ export default function Sidebar({ currentPage, onPageChange, onLogout, isOpen, o
       label: 'デザインPC',
       icon: Monitor,
       children: [
-        { id: 'page-settings', label: 'ページ設定' },
         { id: 'custom-page-settings', label: 'カスタムページ設定' },
         { id: 'form-lp-settings', label: 'フォーム一体型LP設定' },
         { id: 'survey-settings', label: 'アンケート設定' },
