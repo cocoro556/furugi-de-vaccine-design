@@ -313,7 +313,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-sky-400 rounded-lg shadow-sm border border-gray-200" style={{ minHeight: '600px' }}>
+          <div className="bg-sky-400 rounded-lg shadow-sm border border-gray-200" style={{ minHeight: '300px', maxWidth: '500px', margin: '0 auto' }}>
           </div>
 
           <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
