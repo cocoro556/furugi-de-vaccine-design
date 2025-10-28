@@ -316,7 +316,24 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           <div className="bg-sky-400 rounded-lg shadow-sm border border-gray-200" style={{ minHeight: '600px' }}>
           </div>
 
-          <div className="bg-sky-400 rounded-lg shadow-sm border border-gray-200" style={{ minHeight: '400px' }}>
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+            <h3 className="text-gray-900 text-lg font-bold text-center mb-3">
+              【 ご相談・ご質問はこちらまで 】
+            </h3>
+
+            <div className="space-y-3 flex flex-col">
+              <button className="w-full bg-white border-2 border-black text-black font-bold text-base py-3 rounded-lg hover:bg-gray-50 transition-colors">
+                FAQ検索
+              </button>
+
+              <button className="w-full bg-orange-500 text-white font-bold text-base py-3 rounded-lg hover:bg-orange-600 transition-colors">
+                お問い合わせフォーム
+              </button>
+
+              <button className="w-full bg-orange-500 text-white font-bold text-base py-3 rounded-lg hover:bg-orange-600 transition-colors">
+                機能オプション一覧とお申込
+              </button>
+            </div>
           </div>
         </div>
       </div>
