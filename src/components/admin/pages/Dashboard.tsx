@@ -107,50 +107,52 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
 
   return (
     <div className="p-6 bg-gray-50">
-      <div className="mb-6 flex items-start justify-between">
-        <div className="w-full">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">ホーム</h1>
-          <div className="flex items-center text-sm text-gray-600 mb-4">
-            <Calendar className="w-4 h-4 mr-2" />
-            <span>2023年11月1日 (水) 更新</span>
+      <div className="mb-6">
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">ホーム</h1>
+            <div className="flex items-center text-sm text-gray-600">
+              <Calendar className="w-4 h-4 mr-2" />
+              <span>2023年11月1日 (水) 更新</span>
+            </div>
           </div>
-
-          {/* Alert Banner */}
-          <div className="space-y-2">
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-              <div className="flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <div className="flex-1">
-                  <p className="text-sm text-red-900">
-                    <span className="font-semibold">2025-07-31以降ログインしていないメンバーが8名います。</span>
-                    メンバー管理で稼働・非稼働を設定してください。
-                  </p>
-                  <p className="text-sm text-gray-700 mt-2">
-                    アラート情報は2025-10-29 00:34:07時点のものです。
-                    <button className="text-red-600 font-medium hover:underline ml-1">【▲再チェックする】</button>
-                  </p>
-                </div>
+          {currentUser && (
+            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200">
+              <div className="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center">
+                <User className="w-4 h-4 text-white" />
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-900">{currentUser.name}</div>
+                <div className="text-xs text-gray-500">{currentUser.email}</div>
               </div>
             </div>
-            <div className="flex justify-end">
-              <button className="flex items-center gap-1 text-blue-600 text-sm font-medium hover:underline">
-                処理方法はこちらをご参照下さい
-                <HelpCircle className="w-4 h-4" />
-              </button>
+          )}
+        </div>
+
+        {/* Alert Banner */}
+        <div className="space-y-2">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+              <div className="flex-1">
+                <p className="text-sm text-red-900">
+                  <span className="font-semibold">2025-07-31以降ログインしていないメンバーが8名います。</span>
+                  メンバー管理で稼働・非稼働を設定してください。
+                </p>
+                <p className="text-sm text-gray-700 mt-2">
+                  アラート情報は2025-10-29 00:34:07時点のものです。
+                  <button className="text-red-600 font-medium hover:underline ml-1">【▲再チェックする】</button>
+                </p>
+              </div>
             </div>
+          </div>
+          <div className="flex justify-end">
+            <button className="flex items-center gap-1 text-blue-600 text-sm font-medium hover:underline">
+              処理方法はこちらをご参照下さい
+              <HelpCircle className="w-4 h-4" />
+            </button>
           </div>
         </div>
-        {currentUser && (
-          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200">
-            <div className="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center">
-              <User className="w-4 h-4 text-white" />
-            </div>
-            <div>
-              <div className="text-sm font-semibold text-gray-900">{currentUser.name}</div>
-              <div className="text-xs text-gray-500">{currentUser.email}</div>
-            </div>
-          </div>
-        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
