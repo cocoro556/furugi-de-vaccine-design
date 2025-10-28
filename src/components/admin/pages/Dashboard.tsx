@@ -257,11 +257,11 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           </div>
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="px-4 py-3 border-b-2 border-blue-500 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-blue-600">新規受付一覧</h2>
+            <div className="px-4 py-3 border-b-2 border-gray-400 flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-gray-900">新規受付一覧</h2>
               <button
                 onClick={() => window.location.reload()}
-                className="p-2 text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
+                className="p-2 text-gray-600 hover:bg-gray-50 rounded-full transition-colors"
                 title="更新"
               >
                 <RefreshCw className="w-5 h-5" />
@@ -303,15 +303,15 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           <div className="space-y-10">
             <div className="bg-white rounded shadow-sm p-5">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-xl font-bold text-[#1976D2]">ショップの状況</h2>
+                <h2 className="text-xl font-bold text-gray-900">ショップの状況</h2>
                 <button
-                  className="w-8 h-8 rounded-full bg-[#1976D2] hover:bg-[#1565C0] flex items-center justify-center transition-colors"
+                  className="w-8 h-8 rounded-full bg-gray-600 hover:bg-gray-700 flex items-center justify-center transition-colors"
                   aria-label="更新"
                 >
                   <RefreshCw className="w-4 h-4 text-white" />
                 </button>
               </div>
-              <div className="h-0.5 bg-[#1976D2] mb-5"></div>
+              <div className="h-0.5 bg-gray-400 mb-5"></div>
 
               <div className="border border-[#CCC] rounded">
                 <table className="w-full">
@@ -345,15 +345,15 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
 
             <div className="bg-white rounded shadow-sm p-5">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-xl font-bold text-[#1976D2]">大量メール配信オプション利用状況</h2>
+                <h2 className="text-xl font-bold text-gray-900">大量メール配信オプション利用状況</h2>
                 <button
-                  className="w-8 h-8 rounded-full bg-[#1976D2] hover:bg-[#1565C0] flex items-center justify-center transition-colors"
+                  className="w-8 h-8 rounded-full bg-gray-600 hover:bg-gray-700 flex items-center justify-center transition-colors"
                   aria-label="更新"
                 >
                   <RefreshCw className="w-4 h-4 text-white" />
                 </button>
               </div>
-              <div className="h-0.5 bg-[#1976D2] mb-5"></div>
+              <div className="h-0.5 bg-gray-400 mb-5"></div>
 
               <div className="mb-4">
                 <span className="text-base">当月【2025-10】の送信総数</span>
@@ -374,11 +374,11 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           </div>
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden" style={{ marginTop: '40px' }}>
-            <div className="px-4 py-3 border-b-2 border-blue-500 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-blue-600">昨日までの売り上げ推移</h2>
+            <div className="px-4 py-3 border-b-2 border-gray-400 flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-gray-900">昨日までの売り上げ推移</h2>
               <button
                 onClick={() => window.location.reload()}
-                className="p-2 text-blue-600 hover:bg-blue-50 rounded-full transition-colors"
+                className="p-2 text-gray-600 hover:bg-gray-50 rounded-full transition-colors"
                 title="更新"
               >
                 <RefreshCw className="w-5 h-5" />
