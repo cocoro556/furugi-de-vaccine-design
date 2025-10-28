@@ -179,9 +179,9 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
         })}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+      <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-4">
+        <div className="space-y-4">
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-lg font-bold text-gray-900">売上サマリ [2025-10-29 00:34 (水) 現在]</h2>
             </div>
@@ -247,7 +247,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
             <img
               src="/src/assets/image copy copy.png"
               alt="昨日までの売上推移（直近7日間）"
@@ -256,7 +256,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           </div>
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="px-6 py-4 border-b-2 border-blue-500 flex items-center justify-between">
+            <div className="px-4 py-3 border-b-2 border-blue-500 flex items-center justify-between">
               <h2 className="text-2xl font-bold text-blue-600">新規受付一覧</h2>
               <button
                 onClick={() => window.location.reload()}
@@ -312,8 +312,8 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
           </div>
         </div>
 
-        <div className="space-y-6 max-w-md mx-auto">
-          <div className="bg-black rounded-lg p-6 shadow-sm border-4 border-transparent bg-clip-padding relative"
+        <div className="space-y-4">
+          <div className="bg-black rounded-lg p-4 shadow-sm border-4 border-transparent bg-clip-padding relative"
                style={{
                  background: 'linear-gradient(#000, #000) padding-box, linear-gradient(135deg, #00E5FF, #FF1744) border-box'
                }}>
@@ -357,8 +357,8 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-            <h3 className="text-gray-900 text-xl font-bold text-center mb-4">
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+            <h3 className="text-gray-900 text-lg font-bold text-center mb-3">
               【 ご相談・ご質問はこちらまで 】
             </h3>
 
