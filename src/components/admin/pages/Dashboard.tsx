@@ -341,7 +341,7 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
 
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden" style={{ marginTop: '40px' }}>
             <div className="px-4 py-3 border-b-2 border-gray-400 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-gray-900">昨日までの売り上げ推移</h2>
+              <h2 className="text-2xl font-bold text-gray-900">新規受付一覧</h2>
               <button
                 onClick={() => window.location.reload()}
                 className="p-2 text-gray-600 hover:bg-gray-50 rounded-full transition-colors"
