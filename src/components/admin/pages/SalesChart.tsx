@@ -42,7 +42,7 @@ export default function SalesChart() {
 
   return (
     <div className="bg-white rounded-lg p-10 shadow-sm border border-gray-200">
-      <h3 className="text-sm font-semibold text-gray-900 mb-6">新規受付一覧</h3>
+      <h3 className="text-sm font-semibold text-gray-900 mb-6">昨日までの売上推移（直近7日間）</h3>
       <div className="w-full overflow-x-auto">
         <svg
           viewBox={`0 0 ${chartWidth} ${chartHeight}`}
