@@ -266,50 +266,6 @@ export default function Dashboard({ currentUser }: DashboardProps = {}) {
 
           <SalesChart />
 
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="px-4 py-3 border-b-2 border-gray-400 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-gray-900">新規受付一覧</h2>
-              <button
-                onClick={() => window.location.reload()}
-                className="p-2 text-gray-600 hover:bg-gray-50 rounded-full transition-colors"
-                title="更新"
-              >
-                <RefreshCw className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-gray-100">
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">受注ID</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">受注日</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">顧客名</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">購入商品</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">支払方法</th>
-                    <th className="px-4 py-3 text-right text-sm font-semibold text-gray-700">ご請求金額（円）</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {[
-                    { id: 'ORD-20251028-015', date: '2025-10-28', customer: '田中 太郎', product: 'プレミアム商品セット', payment: 'クレジットカード', amount: randomAmount(35000, 55000) },
-                    { id: 'ORD-20251028-014', date: '2025-10-28', customer: '佐藤 花子', product: 'スタンダード商品A', payment: '銀行振込', amount: randomAmount(10000, 20000) },
-                    { id: 'ORD-20251028-013', date: '2025-10-28', customer: '鈴木 一郎', product: 'デラックス商品パック', payment: 'クレジットカード', amount: randomAmount(30000, 45000) },
-                  ].map((order) => (
-                    <tr key={order.id} className="hover:bg-gray-50">
-                      <td className="px-4 py-3 text-sm text-blue-600 hover:underline cursor-pointer">{order.id}</td>
-                      <td className="px-4 py-3 text-sm text-gray-900">{order.date}</td>
-                      <td className="px-4 py-3 text-sm text-gray-900">{order.customer}</td>
-                      <td className="px-4 py-3 text-sm text-gray-900">{order.product}</td>
-                      <td className="px-4 py-3 text-sm text-gray-900">{order.payment}</td>
-                      <td className="px-4 py-3 text-sm text-gray-900 text-right">{order.amount.toLocaleString()}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
           <div className="space-y-10">
             <div className="bg-white rounded shadow-sm p-5">
               <div className="flex items-center justify-between mb-3">
